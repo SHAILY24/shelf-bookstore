@@ -1,0 +1,81 @@
+[tool.bandit]
+exclude_dirs = [
+    "tests",
+    "test",
+    "venv",
+    ".venv",
+    "env",
+    ".env",
+    "node_modules",
+    "__pycache__",
+    ".pytest_cache",
+    "htmlcov",
+    ".tox",
+    "docs",
+    "build",
+    "dist",
+    ".git",
+    "migrations",
+    ".mypy_cache"
+]
+skips = ["B101", "B601", "B603"]
+tests = ["B201", "B301", "B302", "B303", "B304", "B305", "B306", "B307", "B308", "B309", "B310", "B311", "B312", "B313", "B314", "B315", "B316", "B317", "B318", "B319", "B320", "B321", "B322", "B323", "B324", "B325"]
+
+[tool.safety]
+# Safety configuration for dependency scanning
+ignore = [
+    # Add CVE IDs to ignore here if needed
+    # Example: "CVE-2021-12345"
+]
+json = true
+full_report = true
+
+[tool.black]
+line-length = 100
+target-version = ["py39", "py310", "py311"]
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.tox
+  | \.venv
+  | _build
+  | build
+  | dist
+  | migrations
+  | node_modules
+  | venv
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 100
+skip_gitignore = true
+skip = ["venv", ".venv", "node_modules", "migrations"]
+
+[tool.pylint.messages_control]
+disable = [
+    "C0111",  # missing-docstring
+    "C0103",  # invalid-name
+    "R0903",  # too-few-public-methods
+    "R0913",  # too-many-arguments
+    "W0212",  # protected-access
+]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_any_generics = true
+ignore_missing_imports = true
+exclude = [
+    "venv",
+    ".venv",
+    "node_modules",
+    "build",
+    "dist",
+    "tests",
+    "migrations"
+]

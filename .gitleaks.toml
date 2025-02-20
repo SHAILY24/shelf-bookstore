@@ -1,0 +1,76 @@
+# Gitleaks Configuration
+# https://github.com/gitleaks/gitleaks
+
+[extend]
+# Use default Gitleaks rules
+useDefault = true
+
+[allowlist]
+# Paths to ignore during scanning
+paths = [
+    '''node_modules''',
+    '''venv''',
+    '''\.git''',
+    '''dist''',
+    '''build''',
+    '''\.next''',
+    '''coverage''',
+    '''\.pytest_cache''',
+    '''__pycache__''',
+    '''\.mypy_cache''',
+    '''vendor''',
+    '''\.yarn''',
+    '''\.pnp'''
+]
+
+# Files to ignore
+files = [
+    '''(.*?)(jpg|jpeg|png|gif|svg|ico|pdf|zip|tar|gz|tgz|bz2|7z|rar)$''',
+    '''(.*?)lock\.(json|yaml|yml)$''',
+    '''package-lock\.json''',
+    '''yarn\.lock''',
+    '''poetry\.lock''',
+    '''Pipfile\.lock'''
+]
+
+# Additional allow rules for test/example files
+[[rules]]
+id = "allow-test-keys"
+description = "Allow test keys in example files"
+path = '''\.example$|\.sample$|\.template$'''
+allowlist = [
+    '''sk_test_''',
+    '''pk_test_''',
+    '''whsec_'''
+]
+
+# Custom rules for your project
+[[rules]]
+id = "stripe-live-secret-key"
+description = "Stripe Live Secret Key"
+regex = '''sk_live_[0-9a-zA-Z]{24,}'''
+tags = ["key", "stripe", "critical"]
+
+[[rules]]
+id = "stripe-live-publishable-key"
+description = "Stripe Live Publishable Key"
+regex = '''pk_live_[0-9a-zA-Z]{24,}'''
+tags = ["key", "stripe", "warning"]
+
+[[rules]]
+id = "jwt-secret"
+description = "JWT Secret Key"
+regex = '''(?i)(jwt[_\-\s]?secret|secret[_\-\s]?key)[\s]*[=:]\s*["']?[a-zA-Z0-9+/]{32,}["']?'''
+tags = ["key", "jwt", "critical"]
+
+[[rules]]
+id = "database-url"
+description = "Database Connection String with Password"
+regex = '''(?i)(postgres|postgresql|mysql|mongodb|redis|mariadb|mssql):\/\/[^:]+:[^@]+@[^/]+'''
+tags = ["database", "critical"]
+
+[[rules]]
+id = "django-secret"
+description = "Django Secret Key"
+regex = '''(?i)django[_\-\s]?secret[_\-\s]?key[\s]*[=:]\s*["'][a-zA-Z0-9!@#$%^&*()_+\-=\[\]{}|;:,.<>?\/]{40,}["']'''
+tags = ["key", "django", "critical"]
