@@ -1,0 +1,463 @@
+# ==========================================
+# SECURITY - Secrets & Credentials
+# ==========================================
+# Environment files with secrets
+.env
+.env.local
+.env.*.local
+.env.production
+.env.staging
+*.env
+!.env.example
+!.env.sample
+!.env.template
+
+# API Keys and Secrets
+**/secrets/
+**/credentials/
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+.secrets
+.credentials
+apikeys.json
+secrets.json
+credentials.json
+service-account*.json
+firebase-*.json
+
+# Auth tokens
+.npmrc
+.yarnrc
+auth.json
+tokens.json
+.netrc
+
+# AWS
+.aws/
+aws-exports.js
+awsconfiguration.json
+
+# Google Cloud
+gcloud/
+.gcloud/
+*.serviceaccount.json
+
+# Azure
+.azure/
+local.settings.json
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+!migrations/*.sql
+!schema/*.sql
+database.yml
+database.json
+db.json
+
+# ==========================================
+# Python
+# ==========================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+pdm.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Virtual Environments
+.env/
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+virtualenv/
+.virtualenv/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# ==========================================
+# JavaScript / React / Node
+# ==========================================
+# Dependencies
+node_modules/
+jspm_packages/
+bower_components/
+
+# Testing
+coverage/
+*.lcov
+.nyc_output
+
+# Production builds
+dist/
+dist-ssr/
+build/
+out/
+.next/
+.nuxt/
+.vuepress/dist/
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.vercel
+
+# Cache & temp files
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+*.tsbuildinfo
+.npm
+.yarn-integrity
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Gatsby files
+.cache/
+public/
+
+# Comment in the public line in if your project uses Gatsby and not Next.js
+# public
+
+# vuepress build output
+.vuepress/dist
+
+# vuepress v2.x temp and cache directory
+.temp
+
+# Docusaurus cache and generated files
+.docusaurus
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# ==========================================
+# IDEs and Editors
+# ==========================================
+# Visual Studio Code
+.vscode/
+*.code-workspace
+.history/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+.project
+.classpath
+.c9/
+.settings/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.directory
+.Trash-*
+.nfs*
+
+# ==========================================
+# Security Scanning
+# ==========================================
+# Gitleaks
+.gitleaks.toml
+!.gitleaks.toml
+
+# Security scan reports
+security-report/
+vulnerability-report/
+*-audit.json
+*-scan.json
+.scannerwork/
+
+# ==========================================
+# Backups and Temporary Files
+# ==========================================
+*.bak
+*.backup
+*.tmp
+*.temp
+*.orig
+*.rej
+.*.sw[a-z]
+*~
+.#*
+
+# ==========================================
+# Documentation (hide all except whitelisted)
+# ==========================================
+*.md
+!README.md
+!SECURITY.md
+!LICENSE.md
+!CONTRIBUTING.md
+!CODE_OF_CONDUCT.md
+!CHANGELOG.md
+docs/
+documentation/
+*.rst
+*.adoc
+*.pdf
+*.docx
+*.doc
+
+# ==========================================
+# Claude Prompts and Workflows
+# ==========================================
+.claude_*.xml
+.claude_*.md
+.claude/
+
+# ==========================================
+# Project Specific
+# ==========================================
+# SQLite databases
+bookstore.db
+*.db-journal
+*.db-wal
+
+# PM2
+ecosystem.config.js.bak
+
+# Uploaded files
+uploads/
+media/
+static/collected/
+
+# Test data
+test-data/
+fixtures/*.json
+!fixtures/example.json
+
+# Documentation builds
+docs/_build/
+site/
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Docker
+.dockerignore
+docker-compose.override.yml
