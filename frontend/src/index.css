@@ -1,0 +1,52 @@
+/* Reset basic styles */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%; /* Ensure html and body take full height */
+  width: 100%; /* Ensure html and body take full width */
+  box-sizing: border-box;
+  /* Use the font from the MUI theme */
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+}
+
+#root {
+  height: 100%; /* Make root div take full height of its container (body) */
+  width: 100%; /* Make root div take full width */
+  display: flex; /* Use flexbox for potential centering if needed, but mainly for height */
+  flex-direction: column; /* Stack children vertically */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Keep link reset */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Keep number input style reset */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* REMOVE Vite default styles below this line */
+/* 
+:root { ... }
+a { ... } 
+body { ... }
+h1 { ... }
+button { ... }
+@media (prefers-color-scheme: light) { ... }
+*/
