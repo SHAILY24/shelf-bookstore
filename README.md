@@ -1,59 +1,55 @@
-# Shelf - Modern Bookstore Application
+# Shelf: a bookstore app
 
-**Built by Shaily** | [GitHub](https://github.com/SHAILY24)
+Built by Shaily. [GitHub](https://github.com/SHAILY24)
 
-A full-stack e-commerce bookstore that brings together the joy of reading with modern web technology. This project showcases a complete online bookstore with secure payment processing, user authentication, and a beautiful, responsive interface.
+A full-stack e-commerce bookstore: browse a catalog, add to cart, and check out with Stripe. It has user accounts, a REST API, and a responsive React frontend.
 
-## Why I Built This
+## Notes
 
-I wanted to create something that demonstrates real-world development skills - not just another todo app. This bookstore combines my passion for reading with practical e-commerce functionality that businesses actually need. Every feature has been carefully implemented with security and user experience in mind.
+A bookstore is enough surface area to hit the parts of e-commerce that actually matter, so that is what this builds out:
 
-## What Makes This Special
-
-- **Real Payment Processing**: Integrated Stripe for actual payment flows
-- **Security from Day One**: Built with security tools and best practices baked in
-- **Production Ready**: Configured for deployment on real infrastructure
-- **Clean Architecture**: Separated concerns between frontend and backend
-- **Modern Stack**: Using the latest stable versions of all technologies
+- **Payment processing**: Stripe handles the real checkout flow, in test mode here.
+- **Security tooling**: secret scanning and static analysis run before code lands.
+- **Deployment config**: set up to run on Railway/Render and Vercel/Netlify.
+- **Split frontend and backend**: React app and FastAPI service are separate.
+- **Current dependency versions**: stable releases across the stack.
 
 ## Tech Stack
 
 ### Frontend
-- **React 18** with TypeScript for type safety
-- **Vite** for lightning-fast development
-- **Material UI** for beautiful, accessible components
-- **Zustand** for simple yet powerful state management
+- **React 18** with TypeScript
+- **Vite** for the dev server and build
+- **Material UI** for the component library
+- **Zustand** for state management
 - **React Router v6** for client-side routing
-- **Axios** for API communication
-- **Stripe.js** for secure payment processing
+- **Axios** for API calls
+- **Stripe.js** for the payment widget
 
 ### Backend
-- **FastAPI** for high-performance Python APIs
-- **SQLAlchemy** ORM with SQLite for development
-- **Pydantic** for data validation
-- **JWT** authentication with secure token handling
-- **Passlib + bcrypt** for password security
+- **FastAPI** for the Python API
+- **SQLAlchemy** ORM, SQLite in development
+- **Pydantic** for request/response validation
+- **JWT** authentication
+- **Passlib + bcrypt** for password hashing
 - **Uvicorn** ASGI server
-- **Stripe Python SDK** for payment processing
+- **Stripe Python SDK** for the payment backend
 
 ### Security & DevOps
-- **Gitleaks** prevents secrets from being committed
-- **Bandit** scans Python code for vulnerabilities
-- **ESLint Security** checks JavaScript for security issues
-- **GitHub Actions** automates security scanning
-- **Pre-commit hooks** catch issues before they're committed
+- **Gitleaks** blocks committed secrets
+- **Bandit** scans the Python code
+- **ESLint Security** checks the JavaScript
+- **GitHub Actions** runs the scans on push
+- **Pre-commit hooks** catch issues locally first
 
 ## Quick Demo
 
-Want to see it in action? Here's everything you need:
-
 ### Demo Account
-I've set up a test account so you can explore all features:
+A test account is seeded:
 - Email: `test@example.com`
 - Password: `password123`
 
 ### Testing Payments
-Stripe is in test mode, so you can safely try the checkout flow:
+Stripe runs in test mode, so the checkout flow is safe to try:
 - Success Payment: `4242 4242 4242 4242`
 - Card Decline: `4000 0000 0000 0002`
 - 3D Secure Check: `4000 0025 0000 3155`
@@ -64,7 +60,7 @@ Stripe is in test mode, so you can safely try the checkout flow:
 
 ### Prerequisites
 
-Before you begin, make sure you have these installed:
+You will need:
 - **Node.js** (v18 or higher) and **Yarn**
 - **Python** (3.9 or higher) and **pip**
 - **Git** for version control
@@ -137,13 +133,13 @@ Open http://localhost:5173 in your browser
 - **Order History**: Track all your past orders
 
 ### For Developers
-- **RESTful API**: Well-documented endpoints with FastAPI
-- **Type Safety**: TypeScript frontend, Pydantic backend
-- **Authentication**: JWT-based auth with refresh tokens
-- **Database Migrations**: Alembic for schema management
-- **Error Handling**: Comprehensive error messages
-- **Logging**: Structured logging for debugging
-- **Testing**: Unit and integration tests included
+- **REST API**: documented endpoints via FastAPI
+- **Type checks**: TypeScript on the frontend, Pydantic on the backend
+- **Authentication**: JWT with refresh tokens
+- **Database migrations**: Alembic for schema changes
+- **Error handling**: structured error responses
+- **Logging**: structured logs
+- **Tests**: unit and integration tests
 
 ## Project Structure
 
@@ -173,12 +169,12 @@ shelf-bookstore/
 
 ## Security
 
-Security isn't an afterthought here. Every commit goes through multiple security checks:
+Each commit runs through a few checks:
 
-1. **Pre-commit Hooks**: Scan for secrets before code is committed
-2. **CI/CD Pipeline**: Automated security scanning on every push
-3. **Dependency Scanning**: Regular checks for vulnerable packages
-4. **Code Analysis**: Static analysis for security vulnerabilities
+1. **Pre-commit hooks**: scan for secrets before a commit lands
+2. **CI pipeline**: security scans on every push
+3. **Dependency scanning**: checks for vulnerable packages
+4. **Code analysis**: static analysis for known issues
 
 Read the full [Security Policy](SECURITY.md) for details.
 
@@ -189,15 +185,13 @@ The backend provides interactive API documentation:
 - **ReDoc**: http://localhost:4242/redoc
 
 Key endpoints:
-- `POST /api/v1/auth/register` - Create new account
-- `POST /api/v1/auth/login` - Authenticate user
-- `GET /api/v1/auth/me` - Get current user
-- `POST /api/v1/stripe/create-checkout-session` - Start payment
-- `GET /api/v1/orders/me` - Get user's orders
+- `POST /api/v1/auth/register` creates an account
+- `POST /api/v1/auth/login` authenticates a user
+- `GET /api/v1/auth/me` returns the current user
+- `POST /api/v1/stripe/create-checkout-session` starts a payment
+- `GET /api/v1/orders/me` lists the user's orders
 
 ## Deployment
-
-This application is ready for production deployment:
 
 ### Backend Deployment (Railway/Render)
 1. Set environment variables in your platform
@@ -230,7 +224,7 @@ VITE_STRIPE_PUBLISHABLE_KEY=pk_test_...
 
 ## Contributing
 
-I welcome contributions! Here's how you can help:
+Contributions are welcome:
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -284,15 +278,15 @@ yarn test
 
 ## Performance
 
-The application is optimized for speed:
+Rough numbers:
 - Frontend bundle size: ~250KB gzipped
 - API response time: <50ms average
-- Database queries: Optimized with proper indexing
-- Caching: Implemented where appropriate
+- Database queries: indexed
+- Caching: used where it helps
 
 ## Roadmap
 
-Future enhancements I'm planning:
+Things I might add next:
 
 - [ ] Add book recommendations based on purchase history
 - [ ] Implement book reviews and ratings
@@ -309,18 +303,13 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Contact
 
-**Shaily** - [GitHub](https://github.com/SHAILY24)
+**Shaily**, [GitHub](https://github.com/SHAILY24)
 
-Feel free to reach out if you have questions or want to discuss the project!
+Questions about the project are welcome.
 
 ## Acknowledgments
 
-Thanks to these amazing resources:
-- The React and FastAPI communities for excellent documentation
-- Stripe for making payments simple
+- The React and FastAPI docs
+- Stripe for the payment APIs
 - Open Library API for book data
-- All the open source contributors whose tools make this possible
-
----
-
-**Enjoying this project?** Give it a star! ⭐ It helps others discover it too.
+- The open source tools this depends on
